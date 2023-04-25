@@ -35,7 +35,10 @@ func postUser(c *gin.Context) {
 		Name string `json:"name"`
 	}{}
 	c.BindJSON(&user)
+
+	//сходил в базу данных
 	user.Name = "Human"
+
 	c.JSON(200, gin.H{
 		"user": user,
 	})
